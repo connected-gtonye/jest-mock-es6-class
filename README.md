@@ -9,7 +9,7 @@ This module was created to become a helper when building test coverage for code.
 When working unit testing, it is often useful to mock a lot of dependencies in a code.
 For example in the code below:
 
-```
+```javascript
 // send-notification.js
 const CloudMailService = require('some-cloud-mail-npm-module'); // es6 class
 const someConfiguration = require('./some-configuration'); // json object
@@ -38,7 +38,7 @@ In this case the isValid in Utils and send in cloud service.
 A couple of options are available to do so:
 
 ###### Changing the send-notification signature and use Dependency Injection:
-```
+```javascript
 // send-notification.js
 module.exports = (recipient, notificationTextBody, cloudMailService, Utils) => {
     if (Utils.isValid(recipient)) {
@@ -83,7 +83,7 @@ describe('sendNotification testing', () => {
 
 Jest (and other framework such as Sinon) provide tools to mock javascript module.
 In the previous example:
-```
+```javascript
 // send-notification.test.js
 
 const mockedConfig = {
@@ -110,7 +110,7 @@ The issue is around `const CloudMailService = require('some-cloud-mail-npm-modul
 CloudMailService being an es6 class object, using the same method as for the classes above would not work as the mock would not control and track
 `const cloudMailService = new CloudMailService(someConfiguration);`
 One way to solve it could be:
-```
+```javascript
 // send-notification.test.js
 const mockConstructor = jest.fn();
 const mockedSend = jest.fn();
@@ -151,7 +151,7 @@ describe('A test using the mocked es6 class', () => {
 
 The present modules aims to automate the generation of the mockClass and also avoid the needs to port the changes on the mocked class methods.
 The previous example looks like this using the module:
-```
+```javascript
 const MockEs6Class = require('mock-es6-class');
 const CloudMailService = require('some-cloud-mail-npm-module');
 
