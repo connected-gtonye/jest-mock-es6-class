@@ -1,0 +1,8 @@
+# OS
+/**/.idea/
+/**/DS_Store
+/**/~*
+
+# projects
+/node_modules/
+/yarn.lock

@@ -1,0 +1,22 @@
+{
+  "name": "jest-mock-es6-class",
+  "version": "1.0.0",
+  "description": "create a mock class that can be used as a replacement of any es6 class providing an automatic accessible stub for all the methods in the class",
+  "main": "mock-es6-class.js",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "4.11.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-react": "7.4.0",
+    "jest": "21.2.1"
+  },
+  "dependencies": {
+    "eslint-plugin-jsx-a11y": "6.0.2"
+  },
+  "scripts": {
+    "test": "jest ./**/*.test.js",
+    "lint": "eslint --fix *.js"
+  }
+}
